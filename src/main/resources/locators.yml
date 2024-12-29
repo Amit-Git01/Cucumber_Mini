@@ -1,0 +1,71 @@
+# Home Page
+
+homePage:
+  searchBox:
+    name: "search box"
+    type: xpath
+    value: "twotabsearchtextbox"
+
+  searchBtn:
+    name: searchbtn
+    type: cssSelector
+    value: "#nav-search-submit-button"
+
+  accountLink:
+    name: accountLink
+    type: xpath
+    value: "//*[@id='nav-link-accountList']"
+
+  signInLink:
+    name: signIn
+    type: xpath
+    value: "//*[@id='nav-flyout-ya-signin']/a/span"
+
+  electronicsLink:
+    name: electronics
+    type: linkText
+    value: " Electronics "
+
+  smartWatchsLink:
+    name: smartWatch
+    type: xpath
+    value: "//*[@id='sobe_d_b_ms_6_2']/a/div[2]/span"
+
+  appleIcon:
+    name: appleIcon
+    type: xpath
+    value: "//*[@id='sobe_d_b_ms_8_6']/a/div[1]/div/img"
+
+  appleWatch:
+    name: appleWatch
+    type: xpath
+    value: "(//*[@class='s-image'])[4]"
+
+
+# Search Page
+
+searchPage:
+  iphone:
+    name: iphone
+    type: linkText
+    value: "Apple iPhone 15 (128 GB) - Pink"
+
+
+# Product Page
+
+productPage:
+  addToCartBtn:
+    name: addToCart
+    type: xpath
+    value: "//input[@id='add-to-cart-button' and @type='submit']"
+
+  cartBtn:
+    name: cartBtn
+    type: xpath
+    value: "//input[@aria-labelledby='attach-sidesheet-view-cart-button-announce']"
+
+
+
+
+
+
