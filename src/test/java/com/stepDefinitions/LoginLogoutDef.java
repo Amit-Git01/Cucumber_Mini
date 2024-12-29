@@ -1,14 +1,16 @@
 package com.stepDefinitions;
 
+import com.Managers.AllManagers;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginLogoutDef {
+public class LoginLogoutDef extends TestBase{
 
     @Given("I open the application")
     public void i_open_the_application() {
 
+        driver.get(AllManagers.getUrl());
     }
 
     @Then("I click on sign in button and wait for sign in page")

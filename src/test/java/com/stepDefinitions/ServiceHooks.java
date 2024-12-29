@@ -1,6 +1,5 @@
 package com.stepDefinitions;
 
-import com.Models.TestBase;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -11,6 +10,7 @@ public class ServiceHooks {
     @Before
     public void setup() {
         testBase = new TestBase();
+        testBase.createLocalDriver();
         System.out.println("Browser starts");
     }
 
