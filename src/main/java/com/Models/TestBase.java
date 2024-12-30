@@ -1,7 +1,6 @@
-package com.stepDefinitions;
+package com.Models;
 
 import com.Constants.DriverType;
-import com.Managers.AllManagers;
 import com.Reader.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +12,7 @@ public class TestBase {
     public static WebDriver driver;
     private  final ConfigFileReader reader = new ConfigFileReader();
 
-    public  WebDriver createLocalDriver() {
+    public WebDriver createLocalDriver() {
         DriverType driverType = reader.getBrowserType();
         switch (driverType) {
             case CHROME -> driver = new ChromeDriver();
@@ -23,5 +22,9 @@ public class TestBase {
 
         driver.manage().window().maximize();
         return driver;
+    }
+
+    public WebDriver getDriver() {
+        return new TestBase().createLocalDriver();
     }
 }

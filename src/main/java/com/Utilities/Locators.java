@@ -6,16 +6,14 @@ import org.openqa.selenium.By;
 
 public class Locators {
 
-    private final YmlReader ymlReader = new YmlReader();
+    private static final YmlReader ymlReader = new YmlReader();
 
-    private By by;
+    private static By by;
 
     public Locators() {
     }
 
-    ;
-
-    public By getLocator(String page, String elementName) {
+    public static By getLocator(String page, String elementName) {
 
         LocatorType locatorType = ymlReader.getLocatorType(page, elementName);
         String value = ymlReader.getLocatorValue(page, elementName);

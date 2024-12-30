@@ -1,16 +1,21 @@
 package com.stepDefinitions;
 
 import com.Managers.AllManagers;
+import com.Models.HomePage;
+import com.Models.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginLogoutDef extends TestBase{
+public class LoginLogoutDef extends TestBase {
+
+
 
     @Given("I open the application")
-    public void i_open_the_application() {
-
-        driver.get(AllManagers.getUrl());
+    public void i_open_the_application() throws InterruptedException {
+        HomePage home = new HomePage(driver);
+        home.openApplication();
+        home.clickOnSignIn();
     }
 
     @Then("I click on sign in button and wait for sign in page")

@@ -11,15 +11,35 @@ homePage:
     type: cssSelector
     value: "#nav-search-submit-button"
 
-  accountLink:
-    name: accountLink
+  signInLink:
+    name: signInLink
     type: xpath
     value: "//*[@id='nav-link-accountList']"
 
-  signInLink:
-    name: signIn
+#  signInLink:
+#    name: signIn
+#    type: xpath
+#    value: "//*[@id='nav-flyout-ya-signin']/a/span"
+
+  emailInput:
+    name: emailInput
     type: xpath
-    value: "//*[@id='nav-flyout-ya-signin']/a/span"
+    value: "//input[@id='ap_email']"
+
+  passwordInput:
+    name: passwordInput
+    type: xpath
+    value: "//input[@id='ap_password']"
+
+  continueBtn:
+    name: continueBtn
+    type: xpath
+    value: "//input[@id='continue']"
+
+  signInBtn:
+    name: signInBtn
+    type: xpath
+    value: "//input[@id='signInSubmit']"
 
   electronicsLink:
     name: electronics
