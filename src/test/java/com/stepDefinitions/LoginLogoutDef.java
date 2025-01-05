@@ -79,7 +79,7 @@ public class LoginLogoutDef extends TestBase {
 
     @Then("I verify proceed to buy button")
     public void iClickProceedToBuyButton() {
-        cartPage.verfiyProceedToBuy();
+        cartPage.verifyProceedToBuy();
     }
 
     @Then("I Click on Sign out")

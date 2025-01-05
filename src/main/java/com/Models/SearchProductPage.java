@@ -1,10 +1,10 @@
 package com.Models;
 
 import com.Utilities.Locators;
+import com.Utilities.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 import java.util.Set;
@@ -22,9 +22,8 @@ public class SearchProductPage {
     private final By addToCartBtn = Locators.getLocator("productPage", "addToCartBtn");
     private final By cartBtn = Locators.getLocator("productPage", "cartBtn");
 
-
     public CartPage addWatch() throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.waitForSeconds(3);
         String parent = driver.getWindowHandle();
         List<WebElement> watches = driver.findElements(appleWatchList);
         for(int i = 0; i < watches.size(); i++) {
@@ -42,17 +41,18 @@ public class SearchProductPage {
                 break;
             }
         }
-        Thread.sleep(2000);
+
+        Wait.untilElementIsVisible(driver, addToCartBtn, 3);
         driver.findElement(addToCartBtn).click();
 
-        Thread.sleep(2000);
+        Wait.waitForSeconds(3);
         clickOnCartBtn();
 
         return new CartPage(driver);
     }
 
     public CartPage addPhone() throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.waitForSeconds(3);
         String parent = driver.getWindowHandle();
         List<WebElement> phones = driver.findElements(iphoneList);
         for(int i = 0; i < phones.size(); i++) {
@@ -73,19 +73,18 @@ public class SearchProductPage {
                 }
             }
         }
-        Thread.sleep(3000);
+        Wait.untilElementIsVisible(driver, addToCartBtn, 3);
         driver.findElement(addToCartBtn).click();
 
-        Thread.sleep(2000);
+        Wait.waitForSeconds(3);
         clickOnCartBtn();
 
         return new CartPage(driver);
 
     }
 
-
     private void clickOnCartBtn() throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.untilElementIsVisible(driver, cartBtn, 3);
         driver.findElement(cartBtn).click();
     }
 

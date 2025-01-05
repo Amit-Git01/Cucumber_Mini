@@ -2,6 +2,7 @@ package com.Models;
 
 import com.Managers.AllManagers;
 import com.Utilities.Locators;
+import com.Utilities.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -21,22 +22,22 @@ public class HomePage {
 
     public void openApplication() throws InterruptedException {
         driver.get(AllManagers.getUrl());
-        Thread.sleep(5000);
     }
 
     public SignInPage clickOnSignIn() {
+        Wait.untilElementIsVisible(driver, signInLink, 3);
         driver.findElement(signInLink).click();
         return new SignInPage(driver);
     }
 
     public void verifyHomePage(String name) throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.untilElementIsVisible(driver, verifyName, 3);
         boolean actual = driver.findElement(verifyName).getText().contains(name);
         Assert.assertTrue(actual);
     }
 
     public SearchProductPage searchProduct(String product) throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.untilElementIsVisible(driver, searchBox, 3);
         driver.findElement(searchBox).sendKeys(product, Keys.ENTER);
         return new SearchProductPage(driver);
     }

@@ -1,6 +1,7 @@
 package com.Models;
 
 import com.Utilities.Locators;
+import com.Utilities.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -25,22 +26,22 @@ public class SignInPage {
     }
 
     public void enterEmail(String email) throws InterruptedException {
-        Thread.sleep(3000);
+        Wait.untilElementIsVisible(driver, emailInput, 3);
         driver.findElement(emailInput).sendKeys(email);
     }
 
     public void clickOnContinueBtn() throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.untilElementIsVisible(driver, continueBtn, 3);
         driver.findElement(continueBtn).click();
     }
 
     public void enterPwd(String pwd) throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.untilElementIsVisible(driver, passwordInput, 3);
         driver.findElement(passwordInput).sendKeys(pwd);
     }
 
     public HomePage clickOnSignInBtn() throws InterruptedException {
-        Thread.sleep(2000);
+        Wait.untilElementIsVisible(driver, signInBtn, 3);
         driver.findElement(signInBtn).click();
         return new HomePage(driver);
     }
