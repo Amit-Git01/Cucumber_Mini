@@ -17,7 +17,9 @@ public class ServiceHooks {
 
     @After
     public void endTest() {
-        TestBase.driver.quit();
+        if(TestBase.driver != null) {
+            TestBase.driver.quit();
+        }
     }
 
 

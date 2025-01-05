@@ -3,7 +3,7 @@
 homePage:
   searchBox:
     name: "search box"
-    type: xpath
+    type: id
     value: "twotabsearchtextbox"
 
   searchBtn:
@@ -15,11 +15,6 @@ homePage:
     name: signInLink
     type: xpath
     value: "//*[@id='nav-link-accountList']"
-
-#  signInLink:
-#    name: signIn
-#    type: xpath
-#    value: "//*[@id='nav-flyout-ya-signin']/a/span"
 
   emailInput:
     name: emailInput
@@ -36,39 +31,34 @@ homePage:
     type: xpath
     value: "//input[@id='continue']"
 
+  signInLogo:
+    name: signInLogo
+    type: xpath
+    value: "//h1[@class='a-spacing-small']"
+
   signInBtn:
     name: signInBtn
     type: xpath
     value: "//input[@id='signInSubmit']"
 
-  electronicsLink:
-    name: electronics
-    type: linkText
-    value: " Electronics "
-
-  smartWatchsLink:
-    name: smartWatch
+  verifyName:
+    name: verifyName
     type: xpath
-    value: "//*[@id='sobe_d_b_ms_6_2']/a/div[2]/span"
-
-  appleIcon:
-    name: appleIcon
-    type: xpath
-    value: "//*[@id='sobe_d_b_ms_8_6']/a/div[1]/div/img"
-
-  appleWatch:
-    name: appleWatch
-    type: xpath
-    value: "(//*[@class='s-image'])[4]"
+    value: "//span[@id='nav-link-accountList-nav-line-1']"
 
 
 # Search Page
 
 searchPage:
-  iphone:
-    name: iphone
-    type: linkText
-    value: "Apple iPhone 15 (128 GB) - Pink"
+  appleWatchList:
+    name: appleWatchList
+    type: xpath
+    value: "//span[contains(text(),'Apple Watch')]"
+
+  iphoneList:
+    name: iphoneList
+    type: xpath
+    value: "//span[contains(text(),'Apple iPhone 15 (128 GB')]"
 
 
 # Product Page
@@ -84,7 +74,28 @@ productPage:
     type: xpath
     value: "//input[@aria-labelledby='attach-sidesheet-view-cart-button-announce']"
 
+# Cart Page
 
+cartPage:
+  minusBtn:
+    name: minusBtn
+    type: xpath
+    value: "//span[@class='a-icon a-icon-small-remove']"
+
+  plusBtn:
+    name: plusBtn
+    type: xpath
+    value: "//span[@class='a-icon a-icon-small-add']"
+
+  subTotal:
+    name: subTotal
+    type: xpath
+    value: "//div[@class='a-row a-spacing-mini sc-subtotal sc-subtotal-activecart sc-java-remote-feature']"
+
+  proceedToBuy:
+    name: proceedToBuy
+    type: name
+    value: "proceedToRetailCheckout"
 
 
 
